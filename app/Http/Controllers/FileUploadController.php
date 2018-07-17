@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Request\FileUpload;
+use App\Transaction;
 
 class FileUploadController extends Controller
 {
@@ -23,8 +25,8 @@ class FileUploadController extends Controller
      *
      * @return http response
      */
-    public function index()
+    public function index(FileUpload $request)
     {
-        $this->middleware('auth');
+        
     }
 }

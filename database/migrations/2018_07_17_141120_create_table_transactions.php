@@ -29,15 +29,14 @@ class CreateTableTransactions extends Migration
          */
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('amount');
+            $table->string('amount')->nullable();
             $table->string('phone_number')->index();
             $table->string('request_id')->unique();
-            $table->string('message');
-            $table->string('result_desc');
-            $table->string('status');
-            $table->string('third_party_trans_id');
-            $table->string('transaction_time');
-            $table->string('password');
+            $table->string('message')->nullable();
+            $table->string('result_desc')->nullable();
+            $table->string('status')->default(0);
+            $table->string('third_party_trans_id')->unique();
+            $table->string('transaction_time')->nullable();
             $table->softDeletes(); 
             $table->timestamps();
         });
