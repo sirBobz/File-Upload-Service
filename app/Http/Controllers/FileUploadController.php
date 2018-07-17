@@ -15,4 +15,16 @@ class FileUploadController extends Controller
     {
         $this->middleware('auth');
     }
+
+
+
+     /**
+     * receives validated file upload
+     *
+     * @return http response
+     */
+    public function index()
+    {
+        $this->middleware('auth');
+    }
 }
