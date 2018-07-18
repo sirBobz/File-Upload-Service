@@ -38,6 +38,40 @@
          </div>
          <br>
          <br>
+         <!-- Trigger the modal with a button -->
+          <a class="btn btn-xs btn-primary btn-flat" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus">  File Upload</span></a>
+             <div class="table-responsive">
+                <br>
+                <table id="data" class="table table-striped table no-margin">
+                    <thead>
+                        <tr class="success">
+                            <th class="text-center"> ID </th>
+                            <th class="text-center"> Amount </th>
+                            <th class="text-center"> Phone Number</th>
+                            <th class="text-center"> Request ID </th>
+                            <th class="text-center"> Message </th>
+                            <th class="text-center"> Status </th>
+                            <th class="text-center"> Date </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--  Initialize Table ID counter -->
+                        @php $id = 1; @endphp @foreach($transactions as $data)
+                        <tr>
+                            <td class="text-center"> {{$id ++}} </td>
+                            <td class="text-center"> {{$data->amount}}</td>
+                            <td class="text-center"> {{$data->phone_number}}</td>
+                            <td class="text-center"> {{$data->third_party_trans_id}}</td>
+                            <td class="text-center"> {{$data->message}}</td>
+                            <td class="text-center"> {{$data->result_desc}}</td>
+                            <td class="text-center"> {{$data->updated_at}}</td>
+
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            <!-- /.table-responsive -->
+       </div>
          <br>
          <hr>
 

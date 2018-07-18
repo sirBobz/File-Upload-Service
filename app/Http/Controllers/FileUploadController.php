@@ -26,7 +26,7 @@ class FileUploadController extends Controller
      * validates the file content 
      * and inserts the content ito a DB
      *
-     * @return http response
+     * @return \Illuminate\Http\Response
      */
     public function index(FileUpload $request)
     {
