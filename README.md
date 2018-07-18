@@ -1,7 +1,7 @@
 # File-Upload-Service
 This is a Laravel 5.6 powered web application that receives an uploaded file, validates and inserts the data into a database table.
 
-###Minimum Requeirements 
+### Minimum requirements 
 * php >= 7.1.3
 
 ### Installation ###
