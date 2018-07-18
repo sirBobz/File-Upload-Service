@@ -35,7 +35,7 @@ class CreateTableTransactions extends Migration
             $table->string('message')->nullable();
             $table->string('result_desc')->nullable();
             $table->string('status')->default(0);
-            $table->string('third_party_trans_id')->unique();
+            $table->string('third_party_trans_id')->nullable()->unique();
             $table->string('transaction_time')->nullable();
             $table->softDeletes(); 
             $table->timestamps();

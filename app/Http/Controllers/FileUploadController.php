@@ -76,7 +76,7 @@ class FileUploadController extends Controller
      }
     catch (Exception $e) 
      {
-        
+        Log::error($e);
         Session::flash('errorbulk', 'Failed To Fetch DATA From File.');
         DB::rollback(); 
         return Redirect::back();
