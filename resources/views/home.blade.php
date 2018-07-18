@@ -21,6 +21,18 @@
                </ul>
             </div>
             @endif
+
+            @if ($message = Session::get('success'))
+             <div class="alert alert-success" role="alert">
+                 {{ Session::get('success') }}
+             </div>
+            @endif
+
+            @if ($message = Session::get('errorbulk'))
+                <div class="alert alert-danger" role="alert">
+                    {{ Session::get('errorbulk') }}
+                </div>
+            @endif
             <form action="{{ url('uploadfile') }}" method="post" enctype="multipart/form-data">
                @csrf
                <div class="form-group ">
