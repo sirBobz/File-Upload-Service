@@ -74,34 +74,6 @@
     </div>
 </body>
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!-- JavaScript to convert csv to Html table -->
-    <script type="text/javascript" src="{{ URL::asset('js/csv/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/csv/jquery.csv.min.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/csv/jquery.dataTables.min.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/csv/dataTables.bootstrap.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/csv/csv_to_html_table.js') }}"></script>
-
-    <script type="text/javascript">
-            $(function() {
-                $('#file').on('change', function() {
-
-                    var filePath = URL.createObjectURL(event.target.files[0]);
-
-                    CsvToHtmlTable.init({
-                        csv_path: filePath,
-                        element: 'table-container',
-                        allow_download: false,
-                        csv_options: {separator: ',', delimiter: '"'},
-                        datatables_options: {"paging": true}
-                    });
-                });
-            });
-
-    </script>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </html>

@@ -40,21 +40,6 @@
          <br>
          <br>
          <hr>
-         <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="box box">
-                    <div class="box-header">
-                        <h5 class="box-title">File Preview</h5>
-
-                        <div class="box-body">
-                            <div class="table-responsive" id="table-container">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
       </div>
    </div>
