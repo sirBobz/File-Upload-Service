@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Transaction;
 
 class HomeController extends Controller
 {
@@ -17,12 +18,16 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * display all transactions.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('home');
+        $transactions = Transaction::orderBy('id', 'desc')->get();
+
+        return view('home', compact('transactions'));
     }
+
+
 }
