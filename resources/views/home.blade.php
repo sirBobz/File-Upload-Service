@@ -3,7 +3,6 @@
 <div class="container">
    <div class="row justify-content-center">
       <div class="card col-md-12 col-sm-12 col-xs-12">
-         <div class="card-header">Upload File</div>
          <div class="card-body">
             @if ($message = Session::get('success'))
             <div class="alert alert-success alert-block">
@@ -27,21 +26,12 @@
                     {{ Session::get('errorbulk') }}
                 </div>
             @endif
-            <form action="{{ url('uploadfile') }}" method="post" enctype="multipart/form-data">
-               @csrf
-               <div class="form-group ">
-                  <input type="file" class="form-control-file" name="file"  title="Please upload a CSV file" accept=".csv" id="uploadInputFile" aria-describedby="fileHelp">
-                  <small id="fileHelp" class="form-text text-muted">Please upload a valid CSV file. Headers; phone amount</small>
-               </div>
-               <button type="submit" class="btn btn-sm btn-primary">Submit</button>
-            </form>
+
          </div>
-         <br>
-         <br>
          <!-- Trigger the modal with a button -->
-          <a class="btn btn-xs btn-primary btn-flat" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus">  File Upload</span></a>
+          <a class="btn btn-success btn-xs col-md-1 col-sm-1 col-xs-1" data-toggle="modal" data-target="#myModal"> File upload</a>
+           <br>
              <div class="table-responsive">
-                <br>
                 <table id="data" class="table table-striped table no-margin">
                     <thead>
                         <tr class="success">
@@ -72,11 +62,39 @@
                 </table>
             <!-- /.table-responsive -->
        </div>
-         <br>
-         <hr>
 
       </div>
    </div>
 
+</div>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+      <div class="modal-body">
+
+            <form action="{{ url('uploadfile') }}" method="post" enctype="multipart/form-data">
+               @csrf
+               <div class="form-group ">
+                  <input type="file" class="form-control-file" name="file"  title="Please upload a CSV file" accept=".csv" id="uploadInputFile" aria-describedby="fileHelp" required="required">
+                  <small id="fileHelp" class="form-text text-muted">Please upload a valid CSV file. Headers; phone amount</small>
+               </div>
+               <hr>
+               <br>
+               <button type="submit" class="btn btn-sm btn-primary pull-right">Submit</button>
+            </form>
+
+      </div>
+    </div>
+
+  </div>
 </div>
 @endsection
