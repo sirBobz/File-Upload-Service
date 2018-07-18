@@ -33,7 +33,7 @@ class FileUploadController extends Controller
  
     try 
      {
-         DB::beginTransaction();
+         //DB::beginTransaction();
 
          if(Input::hasFile('file')){
 
@@ -44,7 +44,7 @@ class FileUploadController extends Controller
          
           foreach ($data as $key => $value) {  
 
-            if (is_numeric(trim($value->amount))  || is_numeric(trim($value->phone))) {
+            if (is_numeric(trim($value->amount))  && is_numeric(trim($value->phone))) {
 
                 $Transaction = new Transaction;
                 $Transaction->request_id = "jumoworld" . preg_replace('/\D/', '', date('Y-m-d H:i:s')) . str_random(10);
@@ -69,7 +69,7 @@ class FileUploadController extends Controller
 
       Session::flash('success', 'File Being Processed.');
 
-      DB::commit();
+      //DB::commit();
 
       return Redirect::back();
 
@@ -78,7 +78,7 @@ class FileUploadController extends Controller
      {
         Log::error($e);
         Session::flash('errorbulk', 'Failed To Fetch DATA From File.');
-        DB::rollback(); 
+        //DB::rollback(); 
         return Redirect::back();
      } 
 
