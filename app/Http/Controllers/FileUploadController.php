@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Request\FileUpload;
+use App\Http\Requests\FileUpload;
 use App\Transaction;
-use DB, Redirect, Exception, Input, Excel, Log, Session;
+use Illuminate\Support\Facades\Input;
+use DB, Redirect, Exception, Excel, Log, Session;
 
 class FileUploadController extends Controller
 {
